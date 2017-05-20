@@ -138,3 +138,15 @@ function add_testimonial_metaboxes(){
 }
 
 add_action('cmb2_admin_init', 'add_testimonial_metaboxes');
+
+
+
+function whoami_sections_shortcode() {
+    add_meta_box( 'sections-shortcode', __( 'Shortcode', 'whoami' ), 'whoami_sections_shortcode_generator', 'whoami_section', 'side', 'high' );
+}
+add_action( 'add_meta_boxes', 'whoami_sections_shortcode' );
+
+
+function whoami_sections_shortcode_generator($post){
+    echo "<div style='padding: 20px; 0;'><code>[whoami_section id='{$post->ID}']</code></div>";
+}

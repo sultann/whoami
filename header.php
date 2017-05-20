@@ -19,31 +19,79 @@
 <?php wp_head(); ?>
 </head>
 
+<!--@todo add  data-spy="scroll" data-target=".menu-area" data-offset="200" to body-->
+
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site wrapper">
+
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whoami' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+    <!-- Main Header -->
+    <header class="main-header" id="home">
+        <div class="content-table header-content-fixed ">
+            <div class="whoim">
+                <div class="box-line text-uppercase text-bold">
+                    Who I Am
+                </div>
+            </div>
+            <div class="v-content">
+                <div class="container">
+                    <h1 class="text-uppercase color-dark name">i’m Jhone doe</h1>
+                    <h4 class="text-uppercase color-dark font-alt job"><span id="typed" class="typed"></span></h4>
+                </div>
+            </div>
+        </div>
+        <!-- Main navbar -->
+        <div class="menu-area">
+            <div class="toogle-bars">
+                <a href="#menu-collapse" data-toggle="collapse" class="collapsed"><i class="fa fa-bars ic-open"></i> <i
+                            class="fa fa-remove ic-close"></i> MENU</a>
+            </div>
+            <div class="menu-collapse collapse" id="menu-collapse">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="breadcrumb main-nav no-space">
+                                <li class="link-inpage"><a href="#contact" id="hireme-tab" class="link-inpage"><i
+                                                class="fa fa-briefcase"></i> Hire Me Now</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'menu-1',
+                                    'menu_id' => 'primary-menu',
+                                    'menu_class' => 'breadcrumb main-nav nav',
+                                ));
+                            ?>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="breadcrumb main-nav no-space">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-google"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Main navbar -->
+    </header><!-- End Main Header -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whoami' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+    <div id="content" class="site-content">
