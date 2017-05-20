@@ -14,9 +14,9 @@ get_header();
             <?php
          			while ( have_posts() ) : the_post();
 
-                        echo 'test';
-         			    do_shortcode('[whoami_skill]');
-//         			    the_content();
+//                        echo 'test';
+//         			    do_shortcode('[whoami_skill]');
+         			    the_content();
 
          			endwhile; // End of the loop.
          			?>

@@ -14,6 +14,12 @@ function add_employment_metaboxes(){
 		'type'       => 'text',
 	));
 
+    $metabox->add_field(array(
+  		'name'       => esc_html__( 'Position', 'whoami' ),
+  		'desc'       => esc_html__( 'Position you have worked', 'whoami' ),
+  		'id'         => $prefix . 'position',
+  		'type'       => 'text',
+  	));
 
 	$metabox->add_field( array(
 		'name' => esc_html__( 'Joined', 'cmb2' ),

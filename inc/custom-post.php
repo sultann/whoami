@@ -126,7 +126,7 @@ function whoami_register_portfolio() {
 	$args = array(
 		'labels'             => $labels,
 		'description'        => __( 'Description.', 'whoami' ),
-		'public'             => false,
+		'public'             => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'capability_type'    => 'post',

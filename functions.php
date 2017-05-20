@@ -67,6 +67,7 @@ function whoami_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_image_size('portfolio_thumb', 277,208);
 }
 endif;
 add_action( 'after_setup_theme', 'whoami_setup' );
